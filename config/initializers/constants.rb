@@ -1,0 +1,5 @@
+LINE_REDIRECT_URL = 'https://expresstutor.tokyo/line_sign_in_process'
+LINE_CLIENT_ID = '1655604727'
+LINE_SCOPE='profile'
+LINE_NONCE='1234asd'
+LINE_SECRET='9bf7eeb456791ccd36b8c775531f9ecf'

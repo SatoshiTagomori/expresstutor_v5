@@ -1,0 +1,52 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    margin:0;
+}
+#bg{
+    position:fixed;
+    z-index: -1;
+    top:0;
+    width:100%;
+}
+
+header{
+    img{
+        width:300px;
+        float:left;
+    }
+    #line_sign_in_form{
+        float:right;
+        button{
+            width:200px;
+            background-color:green;
+            color:white;
+            font-size:20px;
+            font-weight:bold;
+            padding:10px 0;
+            border-radius:10px;
+            border:none;
+            margin-right: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:756px){
+    header{
+        img{
+            width:90%;
+            margin:10px auto;
+            display:block;
+            float:none;
+        }
+        #line_sign_in_form{
+            float:none;
+            button{
+                display:block;
+                width:90%;
+                margin:0 auto;
+            }
+        }
+    }
+}
