@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="z.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="-282.72619"
+       y="343.20238"
+       width="164.79762"
+       height="99.785714"
+       id="rect32" />
+    <rect
+       x="-174.625"
+       y="47.625"
+       width="133.04762"
+       height="139.85119"
+       id="rect22" />
+    <rect
+       x="-209.39881"
+       y="15.875"
+       width="175.38095"
+       height="150.43452"
+       id="rect16" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter867"
+       x="-0.19245824"
+       width="1.3849165"
+       y="-0.1501924"
+       height="1.3003848">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.4815291"
+         id="feGaussianBlur869" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-158.8383"
+     inkscape:cy="1245.7143"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1472"
+     inkscape:window-height="1021"
+     inkscape:window-x="1339"
+     inkscape:window-y="429"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       id="text14"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333333000000032px;white-space:pre;shape-inside:url(#rect16);" />
+    <text
+       xml:space="preserve"
+       id="text20"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333333000000032px;white-space:pre;shape-inside:url(#rect22);" />
+    <text
+       xml:space="preserve"
+       id="text30"
+       style="font-style:normal;font-weight:normal;font-size:10.58329999999999949px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect32);opacity:0.383459;fill:#89d19b;fill-opacity:1;stroke:none;filter:url(#filter867);"
+       transform="matrix(-11.221414,5.2326313,-2.8573752,-6.1276605,-2049.5687,3735.1342)"><tspan
+         x="-282.72656"
+         y="352.85859"><tspan
+           style="fill:#89d19b;fill-opacity:1">Z</tspan></tspan></text>
+  </g>
+</svg>

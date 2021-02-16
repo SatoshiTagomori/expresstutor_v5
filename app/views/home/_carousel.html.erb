@@ -1,0 +1,7 @@
+<div class='carousel'>
+    <ul>
+        <% pics.each do |pic| %>
+        <li style='background-image:url(<%= image_path(pic[:name]) %>)'><pre><%= pic[:message] %></pre></li>
+        <% end %>
+    </ul>
+</div>

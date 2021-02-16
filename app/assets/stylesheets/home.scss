@@ -32,6 +32,17 @@ header{
     }
 }
 
+
+h2{
+    background-color:green;
+    color:white;
+    padding: 5px 0;
+    text-align:center;
+    span{
+        display:inline-block;
+    }
+}
+
 @media screen and (max-width:756px){
     header{
         img{

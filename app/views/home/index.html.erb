@@ -1,2 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= render partial: "carousel" ,locals:{pics: [{:name=>'top_before.jpg',:message=>"家庭学習に\n行き詰まったら"},
+                                                {:name=>'top_after.jpg',:message=>"LINEで質問!\n動画で解決"}]} %>
+<h2><span>LINEで送る。</span><span>それだけで解説が届く!</span></h2>
+<%= render partial: "manga" ,locals:{pics: [
+                                    {:name=>'top4koma_1.png',:message=>"利用シーン1-1"},
+                                    {:name=>'top4koma_2.png',:message=>"利用シーン1-2"},
+                                    {:name=>'top4koma_3.png',:message=>"利用シーン1-3"},
+                                    {:name=>'top4koma_4.png',:message=>"利用シーン1-4"}
+                                    ]} %>

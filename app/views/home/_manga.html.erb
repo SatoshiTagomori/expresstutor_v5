@@ -1,0 +1,7 @@
+<div class='manga'>
+    <ul>
+        <% pics.each do |pic| %>
+        <li style='background-image:url(<%= image_path(pic[:name]) %>)' alt='<%= pic[:message] %>'></li>
+        <% end %>
+    </ul>
+</div>
