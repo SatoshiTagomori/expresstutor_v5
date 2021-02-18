@@ -1,7 +1,14 @@
 <div class='manga'>
     <ul>
-        <% pics.each do |pic| %>
-        <li style='background-image:url(<%= image_path(pic[:name]) %>)' alt='<%= pic[:message] %>'></li>
-        <% end %>
+        <% pics.each_with_index{|pic,key| %>
+        <li style='background-image:url(<%= image_path(pic[:name]) %>)' alt='<%= pic[:message] %>'>
+            <% if key > 0 %> 
+        　  <img src='/static/arrow_tap_left.png' style='float:left'>
+            <% end %>
+            <% if key < pics.length-1 %>
+            <img src='/static/arrow_tap_right.png' style='float:right'>
+            <% end %>
+        </li>
+        <% } %>
     </ul>
 </div>

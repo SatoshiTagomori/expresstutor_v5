@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="tap_arrow.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:lockguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1200"
+     inkscape:window-x="1200"
+     inkscape:window-y="402"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect833"
+       style="opacity:0.383459;fill:#89d19b;stroke-width:0.152447"
+       d="m 145.97259,112.63698 v 24.16345 h 7.47329 v -24.16345 z m -86.816234,2.41912 v 21.83952 H 8.3154762 v 38.79499 H 59.156356 v 21.83953 l 40.25318,-41.23711 z m 118.381624,6.91559 -17.08609,17.08625 5.2844,5.2844 17.08609,-17.08608 z m -57.94941,0.99653 -5.28439,5.2844 17.08625,17.08608 5.2844,-5.2844 z m -13.68508,29.52601 v 7.47329 h 24.16363 v -7.47329 z m 63.14901,0 v 7.47329 h 24.16344 v -7.47329 z m -36.16745,14.13056 -17.08625,17.08608 5.2844,5.2844 17.08625,-17.08609 z m 31.35662,0.99635 -5.28457,5.2844 17.08626,17.08626 5.2844,-5.28457 z m -18.26908,8.16467 v 24.16345 h 7.47329 v -24.16345 z" />
+  </g>
+</svg>

@@ -5,7 +5,10 @@ $(function(){
         manga.children('ul').append($('<div>').css({'clear':'both'}));
         let element_width=756;
         manga.attr('current_page',0);
+
         set_manga_style(manga,element_width);
+
+
 
         $(this).on('click',function(e){
             if(manga.width()<element_width){
@@ -19,6 +22,7 @@ $(function(){
 
         $(window).on('load resize',function(){
             set_manga_style(manga,element_width);
+            manga.show();
         });
 
         function slide_left(el){
@@ -47,10 +51,26 @@ $(function(){
 
 
         function set_manga_style(manga,element_width){
+            manga.attr('current_page','0');
             let w_width=$(window).width();
             set_manga_div_style(manga,element_width,w_width);
             set_manga_ul_style(manga,element_width,w_width);
             set_manga_li_style(manga,element_width,w_width);  
+            set_manga_arrow_style(manga,element_width,w_width);
+        }
+
+        function set_manga_arrow_style(el,element_width,w_width){
+            el.children('ul').children('li').each(function(){
+                let li_height = $(this).height();
+                $(this).children('img').each(function(){
+                    $(this).css({"width":"70px",'position':'relative','top':(li_height-50)+'px'})
+                    if(w_width<element_width){
+                        $(this).show();
+                    }else{
+                        $(this).hide();
+                    }
+                })
+            })
         }
 
         function set_manga_li_style(el,element_width,w_width){
@@ -88,7 +108,7 @@ $(function(){
         function set_manga_ul_style(el,element_width,w_width){
             if(w_width<element_width){
                 el.children('ul').css({
-                    'width':el.width()*4+'px',
+                    'width':el.width()*el.children('ul').children('li').length+'px',
                     'display':'flex'
                 });
             }else{

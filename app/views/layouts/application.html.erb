@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>ExpresstutorV5</title>
+    <%= favicon_link_tag('favicon.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -25,9 +26,17 @@
     <header>
       <%= image_tag 'logo.png' %>
       <%= render partial: 'home/line_sign_in_form' %>
+      <%= render partial: 'layouts/menu' %>
     </header>
 
 
     <%= yield %>
+
+    <footer>
+      <div class='footer_top'>
+
+      </div>
+    </footer>
+
   </body>
 </html>

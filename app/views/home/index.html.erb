@@ -1,9 +1,211 @@
 <%= render partial: "carousel" ,locals:{pics: [{:name=>'top_before.jpg',:message=>"家庭学習に\n行き詰まったら"},
                                                 {:name=>'top_after.jpg',:message=>"LINEで質問!\n動画で解決"}]} %>
 <h2><span>LINEで送る。</span><span>それだけで解説が届く!</span></h2>
+<h3>必要なのはLINEアカウントだけです</h3>
 <%= render partial: "manga" ,locals:{pics: [
                                     {:name=>'top4koma_1.png',:message=>"利用シーン1-1"},
                                     {:name=>'top4koma_2.png',:message=>"利用シーン1-2"},
                                     {:name=>'top4koma_3.png',:message=>"利用シーン1-3"},
                                     {:name=>'top4koma_4.png',:message=>"利用シーン1-4"}
                                     ]} %>
+
+<div class='slide_in'>
+    <div class='slide_row'>
+        <p>
+            「わからない」をそのままにしない<br>
+            <strong>京大出身講師</strong>が<br>
+            わかりやすく丁寧に解説<br>
+            考え方までわかるから、できるようになる！
+        </p>
+    </div>
+</div>
+
+<h3>まずはお試しで１問無料質問</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                    {:name=>'mazuha_1.png',:message=>"利用シーン2-1"},
+                                    {:name=>'mazuha_2.png',:message=>"利用シーン2-2"},
+                                    {:name=>'mazuha_3.png',:message=>"利用シーン2-3"},
+                                    {:name=>'mazuha_4.png',:message=>"利用シーン2-4"}
+                                    ]} %>
+
+
+
+<h2><span>子どもがわかる！</span><span>解説後に感動続々</span></h2>
+<h3>こんな動画をお返しします</h3>
+<div class='movies'>
+    <iframe src="https://www.youtube.com/embed/OFU_0lqxn40" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/S2UR4m1Q-KY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h3>利用者様の声</h3>
+<div class='voices'>
+    <ul>
+        <li><br>とてもわかりやすい説明をありがとうございます。<br><br>子供はイメージが掴めたといっております。</li>
+        <li>解説動画を見せました。<br>すんなり理解できたようです。<br><br>もう一度子供に解かせたら２分かかりませんでした。</li>
+        <li>今朝解説動画を見ながら実際解いてみたら、とてもわかりやすく、すぐ理解できたそうです。と同時に、こんなに難しい問題を解いていたんだと驚きました！</li>
+        <li>間違えた問題は先生の解説をみて、今はなんとか解けるようになりました。<br><br>理解できるまで繰り返しみられるので助かります。</li>
+        <li>ベン図を使って解く方法も「わかった！」と喜んでいました。<br><br>めちゃわかりやすかったです。</li>
+        <li>とてもわかりやすい解説で、<br>親子ともども感動しました。<br>受験まで並走をよろしくお願いします！</li>
+        <li>ありがとうございました。<br>文章の書き方も大変参考になりました。<br>本番に活かせるように何度もみてみます。</li>
+        <li>その後の問題も解けて「お父さんより解りやすい」とのことです。<br><br>理科の問題もお願いしたいです！</li>
+    </ul>
+</div>
+
+
+<div class='slide_in' style='clear:both'>
+    <div class='slide_row'>
+        <p>
+            <%= image_tag 'keizokuritsu.png',style: "width: 300px;display:block;margin:0 auto" %>
+        </p>
+    </div>
+</div>
+
+<h2>LINEで特急家庭教師の特徴</h2>
+<h3>中学受験を強力にサポート</h3>
+
+<div class='cards'>
+    <div class='card'>
+        <%= image_tag 'tokuchou_1.png' %>
+        <h4><span>&#9312;解説動画を</span><span>24時間以内に返信！</span></h4>
+        <p>
+            いただいた質問には24時間以内に解説をお返しいたします。家庭教師だったら、次に先生が来るまで待たなければいけないところをすぐに対応。
+        </p>
+    </div>
+    <div class='card'>
+        <%= image_tag 'tokuchou_2.png' %>
+        <h4><span>&#9313;オーダーメイド</span><span>動画だからわかる</span></h4>
+        <p>
+        お子さんの理解度、進捗や塾の教え方に沿ったオーダーメイド動画で、確実な理解をお手伝いします。
+        </p>
+    </div>
+    <div class='card'>
+        <%= image_tag 'tokuchou_3.png' %>
+        <h4><span>&#9314;中学受験専門</span><span>プロ講師が解説</span></h4>
+        <p>
+        他サービスのようなアルバイトの大学生は対応しておりません。大手塾の教え方を熟知した中学校受験プロ講師のみがお答えいたします。
+        </p>
+    </div>
+</div>
+
+<h2>使い方はカンタン！</h2>
+<h3>問題と正答をLINEで送るだけ</h3>
+<div class='how_to_use'>
+    <%= image_tag 'within24hours.jpg' %>
+</div>
+
+<h2>こんな時に、使えます！</h2>
+<h3>組分けテスト対策に</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                    {:name=>'konna1_1.png',:message=>"組分けテスト対策に"},
+                                    {:name=>'konna1_2.png',:message=>"組分けテスト対策に"}
+                                    ]} %>
+<h3>テストの復習・定着に</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                        {:name=>'konna2_1.png',:message=>"テストの復習・定着に"},
+                                        {:name=>'konna2_2.png',:message=>"テストの復習・定着に"}
+                                        ]} %>
+<h3>遅れた学習をキャッチアップ</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'konna3_1.png',:message=>"遅れた学習をキャッチアップ"},
+                                            {:name=>'konna3_2.png',:message=>"遅れた学習をキャッチアップ"}
+                                            ]} %>
+<h3>難関校対策に！</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'konna4_1.png',:message=>"難関校対策に！"},
+                                            {:name=>'konna4_2.png',:message=>"難関校対策に！"}
+                                            ]} %>
+<h3>公立中高一貫にも対応！</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'konna5_1.png',:message=>"公立中高一貫にも対応！"},
+                                            {:name=>'konna5_2.png',:message=>"公立中高一貫にも対応！"}
+                                            ]} %>
+<h3>今の塾だけでは不安？</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'konna6_1.png',:message=>"今の塾だけでは不安？"},
+                                            {:name=>'konna6_2.png',:message=>"今の塾だけでは不安？"}
+                                            ]} %>
+<h3>お母さん・お父さんにも難しい</h3>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'konna7_1.png',:message=>"お母さん・お父さんにも難しい"},
+                                            {:name=>'konna7_2.png',:message=>"お母さん・お父さんにも難しい"}
+                                            ]} %>
+<h2><span>わからない！</span><span>をすぐに解決</span></h2>
+
+<div class='explain'>
+    <%= image_tag('v_3.png') %>
+    <h4>解説を読んでもわからない！</h4>
+    <p>
+        塾の問題集、過去問の問題集、あの解説はなぜあんなにも不親切なのでしょう。はしょってあって、解き方がわからないから読むのに、読んでもまったくわかりません。そのうえ、解説を理解するのに、さらに知識が必要なことも多々あります。 しかし「特急家庭教師」の解説なら、問いの解説の前に、基礎知識までも説明する動画をお送りしています。そうしてから問いの解説を不足なく行いますので、理解度が、お客様の評判が違います。<br>
+    </p>
+    <h4>塾で質問の時間がない！</h4>
+    <p>
+        塾で十分に質問の時間をとってもらっているでしょうか？ 質問に行列ができている…　どこをどうやって聞いたらよいかわからない…　どこがわからないかわからない…　質問を作れない…　それが当たり前です。<br>
+        <br>
+        解説されたその場では、だれでもわかった気になります。でも、いざ類似問題に取り組むと、わからなくなることがほとんど。塾では２回も説明が聞けません。家庭教師では、次に先生が来るまで聞けません。<br>
+        <br>
+        でも「特急家庭教師」なら、質問は「問題の写真を撮って送るだけ」。親御さんが、お子さんにわからない問題を聞いたら、その解答とセットでLINE＠に投稿してください。それだけで，何回も聞ける「あなただけの解説」が２４時間以内に受け取れます。<br>
+    </p>
+</div>
+
+<div class='explain'>
+    <%= image_tag('v_4.png') %>
+    <h4>今の説明わからなかったけど…</h4>
+    <p>
+    個別指導や家庭教師で、ていねいに説明を受けても，その場できっちりわかるとは限りません。でも、「今の説明のこの部分がわからなかった」とまで説明できるお子さんは少ないでしょう。なんとなく流れで「わかった」ことにして、そのまま流してしまうことが少なからずあるのです。大人でさえ、説明を受けた直後に「今の説明もう一度」なんて言いづらいですよね。<br>
+    <br>
+    ましてや、集団指導ならなおさら。解説はお子さんを置いて、どんどん過ぎ去ってしまいます。<br>
+    <br>
+    でも「お子さんだけの解説動画」なら遠慮は無用です。納得行くまで、何回でも見直してください。動画はお客様でダウンロードできますし、もしその動画でわからなければ、お問い合わせください。同じ問題を解説し直しは無料です。<br>
+    <br>
+    <h4>塾で成績が上がらない！</h4>
+    <p>
+    多くのご家庭の最大の悩みです。これは塾に通っているだけでは解決しません。今の力に合わない問題を問いている。解説を読むが、わからないままになっている。など、原因もさまざまです。<br>
+    <br>
+    「特急家庭教師」では、中学受験専門のプロ講師が、カウンセリングも行っています。今の状況をお電話で聞き取りしながら、今後のアドバイスをいたします。<br>
+    </p>
+</div>
+
+<div class='explain'>
+    <%= image_tag('v_1.png') %>
+    <h4>自宅学習こそが合格への近道！</h4>
+    <p>
+    たとえば大学受験の例では、難関校に受かった受験生ほど、自宅学習の時間が長いことが明らかになっています。中学受験も同じことです。塾は解説を聞いて演習する時間，あるいは入試の情報を取得する場，ととらえましょう。<br>
+    <br>
+    復習する時間，過去問をすばやく解く時間は家庭で設けます。わかるまでじっくり時間をかけます。そんなとき，難しい問題で手が止まってしまってはもったいない。解説の理解に時間を取られてはもったいない。<br>
+    <br>
+    解説の理解には，「特急家庭教師」を利用して，家庭学習を効率よく進めましょう。<br>
+    </p>
+    <h4>独特の適性検査もわかりやすく解説</h4>
+    <p>
+    一般的な私学入試問と大きく異る公立中間一貫校の適性検査。<br>
+    <br>
+    解答を導くまでには、さまざまな考え方を駆使しなければならず、問題に付属している解説を読んだだけでは納得いかないことがほとんどでしょう。さらに、地域によっては，塾などで十分に対応してもらえないケースもよく聞きます。<br>
+    <br>
+    そのような場合は、私たちの解説をお使いください。これまでに多様な適正検査の解説について実績をつんでおり、ていねいに、わかりやすくお伝えする自信があります。<br>
+    </p>
+</div>
+
+<h2>コース紹介</h2>
+<%= render partial: 'plans' %>
+
+<h2>自宅学習こそが合格の要</h2>
+<h3>効率的な自宅学習を！</h3>
+<p class='strong_message'>塾に行く日数と、合格率は比例しません。<br>断言します。</p>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'jitaku1_1.png',:message=>"効率的な自宅学習を！"},
+                                            {:name=>'jitaku1_2.png',:message=>"効率的な自宅学習を！"}
+                                            ]} %>
+<h3>モチベーションコントロールに</h3>
+<p class='strong_message'>勉強はモチベーションコントロールが８割です。<br>ダイエットと同じです。</p>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'jitaku2_1.png',:message=>"モチベーションコントロールに"},
+                                            {:name=>'jitaku2_2.png',:message=>"モチベーションコントロールに"}
+                                            ]} %>
+<h3>円滑な関係性の一助に</h3>
+<p class='strong_message'>
+    思いが強いからこそ言い過ぎてしまう。<br>
+    みなさん、状況は同じです。<br>
+</p>
+<%= render partial: "manga" ,locals:{pics: [
+                                            {:name=>'jitaku3_1.png',:message=>"円滑な関係性を！"},
+                                            {:name=>'jitaku3_2.png',:message=>"円滑な関係性を！"}
+                                            ]} %>

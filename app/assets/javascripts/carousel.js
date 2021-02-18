@@ -24,6 +24,7 @@ $(function(){
         $(window).on('load resize',function(){
             //カルーセルのスタイルを指定
             set_carousel_style(carousel,element_width,max_page);
+            carousel.show();
             carousel_text(carousel);
         })
         
