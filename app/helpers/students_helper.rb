@@ -48,7 +48,7 @@ module StudentsHelper
     end
 
     def get_user_info(access_token)
-        user_info_response = get_line_user_info(access_token)
+        user_info_response = get_line_user_info_response(access_token)
         if user_info_response.code !='200'
             set_error('ユーザー情報の取得に失敗しました')
         else
