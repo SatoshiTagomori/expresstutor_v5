@@ -13,14 +13,14 @@ module StudentsHelper
     end
 
     def get_line_user_info(access_token)
-        uri = URI.parse("https://api.line.me/oauth2/v2.1/verify")
+        uri = URI.parse("https://api.line.me/v2/profile")
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        grant_type = "authorization_code"
+        a_token = "Bearer "+access_token
         http.start do
-          req = Net::HTTP::Post.new(uri.path)
-          req.set_form_data(id_token: access_token,client_id: LINE_CLIENT_ID)
+          req = Net::HTTP::Get.new(uri.path)
+          req.set_form_data(Authorization: a_token)
           return http.request(req)
         end    
     end
