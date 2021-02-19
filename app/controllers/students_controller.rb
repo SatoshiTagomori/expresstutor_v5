@@ -4,23 +4,22 @@ class StudentsController < ApplicationController
     require 'uri'
     require 'json'
     require 'base64'
-    @error = []
-
+=begin
     access_token_response = get_access_token(params[:code])
     if access_token_response.code != '200'
-      @error.push('アクセストークンの取得に失敗しました。')
+      set_error('アクセストークンの取得に失敗しました。')
       return
     end
 
     access_token_body = JSON.parse(access_token_response.body)
-    
-    user_info_response = get_line_user_info(access_token_body["access_token"])
+    session[:access_token] = access_token_body["access_token"]
+=end
+    #アクセストークンを取得してセッションにいれる
+    access_token = get_access_token(params[:code])
 
-    if user_info_response.code !='200'
-      @error.push('ユーザー情報の取得に失敗しました')
-      return
+    #エラーがなければ
+    if is_no_error()
+      @user_info = get_user_info(access_token)
     end
-    
-    @user_info = JSON.parse(user_info_response.body)
   end
 end
