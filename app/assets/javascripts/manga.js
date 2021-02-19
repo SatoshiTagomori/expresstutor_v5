@@ -75,7 +75,7 @@ $(function(){
 
         function set_manga_li_style(el,element_width,w_width){
             let ul_width = el.children('ul').width();
-            console.log(ul_width()<element_width);
+            console.log(ul_width<element_width);
             if(el.width()<element_width){
                 el.children('ul').children('li').css({
                     'flex':'1',
