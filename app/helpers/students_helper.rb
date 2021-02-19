@@ -17,10 +17,10 @@ module StudentsHelper
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        a_token = "Bearer "+access_token
         http.start do
           req = Net::HTTP::Get.new(uri.path)
-          req.set_form_data(Authorization: a_token)
+          #req.set_form_data(Authorization: a_token)
+          req.initialize_http_header("Bearer "+access_token)
           return http.request(req)
         end    
     end
