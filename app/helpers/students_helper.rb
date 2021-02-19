@@ -20,7 +20,6 @@ module StudentsHelper
         headers={"Authorization" =>"Bearer "+access_token}
         http.start do
           req = Net::HTTP::Get.new(uri.path)
-          #req.set_form_data(Authorization: a_token)
           req.initialize_http_header(headers)
           return http.request(req)
         end    
