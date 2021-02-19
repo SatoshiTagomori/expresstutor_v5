@@ -1,4 +1,4 @@
-LINE_REDIRECT_URL = 'https://expresstutor.tokyo/line_sign_in_process'
+LINE_REDIRECT_URL = 'https://expresstutor.tokyo/students'
 LINE_CLIENT_ID = '1655604727'
 LINE_SCOPE='profile'
 LINE_NONCE='1234asd'

@@ -82,7 +82,6 @@ $(function(){
                     'height':el.width()/1.85+'px',
                     'margin':'0'
                 })
-                console.log(el.width() +':'+ element_width);
             }else{
                 el.children('ul').children('li').css({
                     'width':(ul_width/2-10)+'px',
