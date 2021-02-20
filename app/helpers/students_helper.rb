@@ -38,8 +38,8 @@ module StudentsHelper
 
     def get_access_token(code)
         access_token_response = get_access_token_response(code)
-        logger.debug access_token_response
         if access_token_response.code != '200'
+            set_error(access_token_response.to_s)
             set_error('アクセストークンの取得に失敗しました。')
         else
             access_token_body = JSON.parse(access_token_response.body)
