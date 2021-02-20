@@ -38,6 +38,7 @@ module StudentsHelper
 
     def get_access_token(code)
         access_token_response = get_access_token_response(code)
+        logger.debug access_token_response
         if access_token_response.code != '200'
             set_error('アクセストークンの取得に失敗しました。')
         else
@@ -49,6 +50,7 @@ module StudentsHelper
 
     def get_user_info(access_token)
         user_info_response = get_line_user_info_response(access_token)
+        logger.debug user_info_response
         if user_info_response.code !='200'
             set_error('ユーザー情報の取得に失敗しました')
         else
