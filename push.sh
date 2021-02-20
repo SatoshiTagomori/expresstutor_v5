@@ -1,3 +1,3 @@
 git add -A
 git commit -m 'test'
-git push orign master
+git push origin master
