@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
 
     #アクセストークンを取得してセッションにいれる
     access_token = get_access_token(params[:code])
-
+    @a_token = access_token
     #エラーがなければ
     if is_no_error()
       #ユーザー情報を取得する
