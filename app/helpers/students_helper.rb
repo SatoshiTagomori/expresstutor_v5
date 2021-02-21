@@ -12,6 +12,15 @@ module StudentsHelper
         #セッションにstudent_idがあるかどうかでログインしているかどうかを判断。
         #ただし、なんらかの事情でstudent_idが欠損していたとしてもアクセストークンが
         #有効であればログイン済みの状態にする
+
+        #まずはローカル環境
+        if `hostname`.strip == 'tagomorisounoMac-mini.local'
+            student = Student.find(1)
+            session[:student_id] = student.id
+            session[:lineid] = student.lineid
+            return true
+        end
+
         if session[:student_id].nil?
             #アクセストークンのチェック
             if check_access_token
@@ -31,7 +40,7 @@ module StudentsHelper
                     return false
                 end
             else
-                ＃アクセストークンが無効であれば
+                #アクセストークンが無効であれば
                 return false
             end
         else
