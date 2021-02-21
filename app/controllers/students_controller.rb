@@ -10,6 +10,8 @@ class StudentsController < ApplicationController
         @user_info = get_user_info(access_token)
         @student = Student.find_by(:lineid => @user_info["userId"])
         @student = student_insert(@student,@user_info)
+        session[:student_id]=@student.id
+        session[:lineid]=@student.lineid
       end
     end
 
