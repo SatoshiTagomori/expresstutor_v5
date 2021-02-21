@@ -3,7 +3,7 @@ module StudentsHelper
     #ログインしているかどうかのチェック
     def student
         #カレントユーザーがなければ
-        if @student!=nil
+        if @student==nil
             #アクセストークンの有効性チェック
             if check_access_token
                 #アクセストークンが問題なければ
@@ -13,13 +13,12 @@ module StudentsHelper
                 @student = Student.find_by(:lineid => @user_info["userId"])
                 #dbになければinsertしておく
                 student_insert
-                return true
             else
-                return false
+                return nil
             end
         else
             #カレントユーザーがあれば特に何もしなくて良い
-            return true
+            @student
         end     
     end
 
