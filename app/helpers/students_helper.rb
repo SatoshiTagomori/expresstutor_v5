@@ -1,7 +1,7 @@
 module StudentsHelper
 
     #ログインしているかどうかのチェック
-    def is_logined
+    def student
         #カレントユーザーがなければ
         if @student!=nil
             #アクセストークンの有効性チェック

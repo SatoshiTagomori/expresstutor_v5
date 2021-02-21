@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     #アクセストークンが有効であれば
-    if is_logined == false
+    if student.nil?
       #アクセストークンを取得してセッションにいれる
       access_token = get_access_token(params[:code])
       #エラーがなければ
