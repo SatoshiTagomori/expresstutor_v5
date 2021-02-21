@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: expresstutor_v5_production
-  username: expresstutor_v5
-  password: <%= ENV['EXPRESSTUTOR_V5_DATABASE_PASSWORD'] %>
+  database: expresstutor
+  username: root
+  password: 
