@@ -1,31 +1,42 @@
 module StudentsHelper
 
-    #ログインしているかどうかのチェック
-    def student
-        #カレントユーザーがなければ
-        if @student==nil
-            #アクセストークンの有効性チェック
+
+    def is_logined
+        #セッションにstudent_idがあるかどうかでログインしているかどうかを判断。
+        #ただし、なんらかの事情でstudent_idが欠損していたとしてもアクセストークンが
+        #有効であればログイン済みの状態にする
+        if session[:student_id].nil?
+            #アクセストークンのチェック
             if check_access_token
-                #アクセストークンが問題なければ
-                #ユーザー情報を取得して
-                user_info= get_user_info(session[:access_token])
-                #lineidからユーザー情報を取得する
-                @student = Student.find_by(:lineid => @user_info["userId"])
-                #dbになければinsertしておく
-                student_insert
+                #トークンに問題がなければ
+                #ユーザー情報を取得する
+                user_info = get_user_info(session[:access_token])
+                if user_info
+                    #ユーザー情報を取得できていれば
+                    student = Student.find_by(:lineid => user_info["userId"])
+                    #一応なければinsertしておく
+                    student = student_insert(student,user_info)
+                    session[:student_id] = student.id
+                    session[:lineid] = student.lineid
+                    return true
+                else
+                    #取得に失敗したら
+                    return false
+                end
             else
-                return nil
+                ＃アクセストークンが無効であれば
+                return false
             end
         else
-            #カレントユーザーがあれば特に何もしなくて良い
-            @student
-        end     
+            return true
+        end
     end
 
-    def student_insert
-        if @student.blank?
-            @student = Student.create(:name=>@user_info["displayName"],:lineid=>@user_info["userId"])
+    def student_insert(student,user_info)
+        if student.blank?
+            student = Student.create(:name=>user_info["displayName"],:lineid=>user_info["userId"])
         end
+        student
     end
 
 
