@@ -1,5 +1,12 @@
 module StudentsHelper
 
+    def current_user
+        if @current_user
+            Student.find_by(session[:student_id])
+        else
+            @current_user
+        end
+    end
 
     def is_logined
         #セッションにstudent_idがあるかどうかでログインしているかどうかを判断。
