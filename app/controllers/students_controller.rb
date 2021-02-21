@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
     require 'base64'
     #アクセストークンが有効であれば
     if check_access_token
-      @user_info= get_user_info(access_token)
+      @user_info= get_user_info(session[:access_token])
       @student = Student.find_by(:lineid => @user_info["userId"])
       if @student.blank?
         @student = Student.create(:name=>@user_info["displayName"],:lineid=>@user_info["userId"])
@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
         end
       end
     end
-    
+
   end
 
 
