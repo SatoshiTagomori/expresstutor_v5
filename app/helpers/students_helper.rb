@@ -1,4 +1,27 @@
 module StudentsHelper
+
+    #アクセストークンの有効性チェック
+    def check_access_token()
+        if session[:access_token].present?
+            uri = URI.parse("https://api.line.me/oauth2/v2.1/verify")
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+            http.start do
+                req = Net::HTTP::Get.new(uri.path)
+                req.set_form_data(access_token: session[:access_token])
+                res = http.request(req)
+                if res.code =='200'
+                    return true
+                else
+                    return false
+                end
+            end
+        else
+            return false
+        end
+    end
+
     def get_access_token_response(code)
         uri = URI.parse("https://api.line.me/oauth2/v2.1/token")
         http = Net::HTTP.new(uri.host, uri.port)
@@ -58,5 +81,7 @@ module StudentsHelper
             return JSON.parse(user_info_response.body)
         end
     end
+
+    
 
 end
