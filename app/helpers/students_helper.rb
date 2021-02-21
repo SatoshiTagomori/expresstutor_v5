@@ -2,7 +2,7 @@ module StudentsHelper
 
     def current_user
         if @current_user.nil?
-            Student.find_by(session[:student_id])
+            Student.find_by(:id=>session[:student_id])
         else
             @current_user
         end
