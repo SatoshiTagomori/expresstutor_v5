@@ -1,0 +1,30 @@
+<h2>お客様情報編集</h2>
+<% if Personal.find_by(:student_id=>session[:student_id]).present? then %>
+    <%= form_for Student.find_by(:id=>session[:student_id]).personal ,url: student_edit_path do |f| %>
+        <%= f.label :pref_id ,'都道府県' %>
+        <%= f.collection_select :pref_id ,Pref.all,:id,:name %>
+        <%= f.label :gakunen_if,'現在の学年' %>
+        <%= f.collection_select :gakunen_id,Gakunen.all,:id,:name %>
+        <%= f.label :name,'お名前'%>
+        <%= f.text_field :name ,placeholder: '例）特急　華子' %>
+        <%= f.label :cname,'お子様のお名前' %>
+        <%= f.text_field :cname ,placeholder: '例）特急　太郎'%>
+        <%= f.label :tel, '電話番号' %>
+        <%= f.text_field :tel ,placeholder: 'xxx-xxxx-xxxx' %>
+        <%= f.submit '登録' %>
+    <% end %>
+<% else %>
+    <%= form_for Personal.new ,url: student_new_path do |f| %>
+        <%= f.label :pref_id ,'都道府県' %>
+        <%= f.collection_select :pref_id ,Pref.all,:id,:name %>
+        <%= f.label :gakunen_if,'現在の学年' %>
+        <%= f.collection_select :gakunen_id,Gakunen.all,:id,:name %>
+        <%= f.label :name,'お名前'%>
+        <%= f.text_field :name ,placeholder: '例）特急　華子' %>
+        <%= f.label :cname,'お子様のお名前' %>
+        <%= f.text_field :cname ,placeholder: '例）特急　太郎'%>
+        <%= f.label :tel, '電話番号' %>
+        <%= f.text_field :tel ,placeholder: 'xxx-xxxx-xxxx' %>
+        <%= f.submit '登録' %>
+    <% end %>
+<% end %>

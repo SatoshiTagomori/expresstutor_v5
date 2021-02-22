@@ -24,9 +24,20 @@
     </svg>
     </div>
     <header>
-      <%= image_tag 'logo.png' %>
+    <%= link_to root_path do %> 
+      <h1 class='clearfix'><%= image_tag 'logo.png',alt: 'LINEで特急家庭教師' %></h1>
+    <% end %>
+    <% if is_logined %>
+      <%= link_to 'マイページ', students_path,id: 'my_page_link' %>
+    <% else %>
       <%= render partial: 'home/line_sign_in_form' %>
+    <% end %>
+
+    <% if controller.controller_name ==='students' %>
+    <%= render partial: 'layouts/students_menu' %>
+    <% else %>
       <%= render partial: 'layouts/menu' %>
+    <% end %>
     </header>
 
 

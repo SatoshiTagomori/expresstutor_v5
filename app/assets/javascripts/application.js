@@ -16,3 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
+//戻るボタンを押した時にjsが動かない現象の解決
+//safari用
+window.onpageshow = function(event) {
+	if (event.persisted) {
+		 window.location.reload();
+	}
+};

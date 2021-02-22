@@ -14,9 +14,40 @@ class StudentsController < ApplicationController
         session[:lineid]=@student.lineid
       end
     end
-
   end
 
+  def edit
+  end
+
+  def update_personal
+    current_user.personal.update(personal_update_params)
+    redirect_to student_edit_path
+  end
+
+  def create
+    Personal.create(personal_params)
+    redirect_to students_path
+  end
+
+  def logout
+    session[:error] = []
+    session[:student_id]=nil
+    session[:access_token]=nil
+    current_user=nil
+    redirect_to root_path
+  end
+
+
+
+  private
+
+  def personal_params
+    params.require(:personal).permit(:name,:cname,:tel,:pref_id,:gakunen_id).merge(:student_id=>current_user.id)
+  end
+
+  def personal_update_params
+    params.require(:personal).permit(:name,:cname,:tel,:pref_id,:gakunen_id)
+  end
 
 
 end

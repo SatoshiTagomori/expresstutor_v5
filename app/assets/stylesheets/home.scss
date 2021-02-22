@@ -27,9 +27,11 @@ body{
 }
 
 header{
-    img{
-        width:300px;
+    h1{
         float:left;
+        img{
+            width:300px;
+        }
     }
     #line_sign_in_form{
         float:right;
@@ -44,6 +46,21 @@ header{
             border:none;
             margin-right: 20px;
         }
+    }
+    #my_page_link{
+        float:right;
+        display:block;
+        width:200px;
+        background-color:green;
+        color:white;
+        text-align:center;
+        text-decoration:none;
+        font-size:20px;
+        font-weight:bold;
+        padding:10px 0;
+        border-radius:10px;
+        border:none;
+        margin-right: 20px;
     }
     nav{
         clear:both;
@@ -229,11 +246,15 @@ footer{
 
 @media screen and (max-width:756px){
     header{
-        img{
+        h1{
+            float:none;
             width:90%;
             margin:10px auto;
-            display:block;
-            float:none;
+            img{
+                width:100%;
+                display:block;
+                float:none;
+            }
         }
         #line_sign_in_form{
             float:none;
@@ -242,6 +263,11 @@ footer{
                 width:90%;
                 margin:0 auto;
             }
+        }
+        #my_page_link{
+            width:90%;
+            float:none;
+            margin:0 auto;
         }
         nav{
             ul{

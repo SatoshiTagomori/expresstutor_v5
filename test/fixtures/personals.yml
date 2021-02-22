@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  pref: one
+  gakunen: one
+  name: MyString
+  cname: MyString
+  tel: MyString
+
+two:
+  student: two
+  pref: two
+  gakunen: two
+  name: MyString
+  cname: MyString
+  tel: MyString
