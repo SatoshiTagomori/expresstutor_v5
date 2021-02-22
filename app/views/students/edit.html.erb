@@ -14,7 +14,7 @@
         <%= f.submit '登録' %>
     <% end %>
 <% else %>
-    <%= form_for Personal.new ,url: student_new_path do |f| %>
+    <%= form_for Personal.new ,url: student_edit_path do |f| %>
         <%= f.label :pref_id ,'都道府県' %>
         <%= f.collection_select :pref_id ,Pref.all,:id,:name %>
         <%= f.label :gakunen_if,'現在の学年' %>
