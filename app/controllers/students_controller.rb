@@ -10,10 +10,12 @@ class StudentsController < ApplicationController
           #テーブルに値を入れて、セッションに必要事項を書く
           set_student_data(@line)
         else
-          flash.now[:danger] = 'ユーザー情報の取得に失敗しました。再度ログインしてください。'
+          flash[:danger] = 'ユーザー情報の取得に失敗しました。再度ログインしてください。'
+          sign_out_action
         end
       else
-        flash.now[:danger] = 'アクセストークンが有効期限切れです。再度ログインしてください。'
+        flash[:danger] = 'アクセストークンが有効期限切れです。再度ログインしてください。'
+        sign_out_action
       end
     else
       #アクセストークンを取得する
@@ -24,10 +26,12 @@ class StudentsController < ApplicationController
           set_student_data(@line)
           flash.now[:success] = 'ログインしました'
         else
-          flash.now[:danger] = 'ユーザー情報の取得に失敗しました。管理者にお問い合わせください。'
+          flash[:danger] = 'ユーザー情報の取得に失敗しました。管理者にお問い合わせください。'
+          sign_out_action
         end
       else
         flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください。' 
+        sign_out_action
       end
     end
 
@@ -48,11 +52,7 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    session[:student_id]=nil
-    session[:access_token]=nil
-    session[:user_id]=nil
-    session[:user_type]=nil
-    current_user=nil
+    sign_out
     redirect_to root_path
   end
 
