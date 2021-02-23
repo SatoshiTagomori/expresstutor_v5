@@ -38,48 +38,25 @@ module StudentsHelper
         #まずはローカル環境
         if `hostname`.strip == 'tagomorisounoMac-mini.local'
             student = Student.find(1)
-            session[:student_id] = student.id
-            session[:lineid] = student.lineid
+            session[:user_id] = student.id
+            session[:user_type]='student'
             return true
         end
 
         if session[:user_id].blank?
             return false
-=begin
-            #アクセストークンのチェック
-            if check_access_token
-                #トークンに問題がなければ
-                #ユーザー情報を取得する
-                user_info = get_user_info(session[:access_token])
-                if user_info
-                    #ユーザー情報を取得できていれば
-                    student = Student.find_by(:lineid => user_info["userId"])
-                    #一応なければinsertしておく
-                    student = student_insert(student,user_info)
-                    session[:student_id] = student.id
-                    session[:lineid] = student.lineid
-                    return true
-                else
-                    #取得に失敗したら
-                    return false
-                end
-            else
-                #アクセストークンが無効であれば
-                return false
-            end
-=end
         else
             return true
         end
     end
-
+=begin
     def student_insert(student,user_info)
         if student.blank?
             student = Student.create(:name=>user_info["displayName"],:lineid=>user_info["userId"])
         end
         student
     end
-
+=end
 
     #アクセストークンの有効性チェック
     def check_access_token()

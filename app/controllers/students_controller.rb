@@ -2,19 +2,29 @@ class StudentsController < ApplicationController
   include Utils::Line
   def index
     @line = Line.new
-
-    #アクセストークンを取得する
-    if @line.get_access_token(params[:code]) != false
-      #ユーザー情報を取得する
+    #アクセストークンが存在する場合ならば
+    if session[:access_token].present?
+      @line.access_token = session[:access_token]
       if @line.get_user_info() != false
         #テーブルに値を入れて、セッションに必要事項を書く
         set_student_data(@line)
-        flash.now[:success] = 'ログインしました'
       else
-        flash.now[:danger] = 'ユーザー情報の取得に失敗しました'
+        flash.now[:danger] = 'ユーザー情報の取得に失敗しました。再度ログインしてください。'
       end
     else
-      flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください' 
+      #アクセストークンを取得する
+      if @line.get_access_token(params[:code]) != false
+        #ユーザー情報を取得する
+        if @line.get_user_info() != false
+          #テーブルに値を入れて、セッションに必要事項を書く
+          set_student_data(@line)
+          flash.now[:success] = 'ログインしました'
+        else
+          flash.now[:danger] = 'ユーザー情報の取得に失敗しました。管理者にお問い合わせください。'
+        end
+      else
+        flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください。' 
+      end
     end
 
 =begin
