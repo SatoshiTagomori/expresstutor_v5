@@ -1,6 +1,6 @@
 <h2>お客様情報編集</h2>
-<% if Personal.find_by(:student_id=>session[:student_id]).present? then %>
-    <%= form_for Student.find_by(:id=>session[:student_id]).personal ,url: student_edit_path do |f| %>
+<% if Personal.find_by(:student_id=>session[:user_id]).present? then %>
+    <%= form_for Student.find_by(:id=>session[:user_id]).personal ,url: student_edit_path do |f| %>
         <%= f.label :pref_id ,'都道府県' %>
         <%= f.collection_select :pref_id ,Pref.all,:id,:name %>
         <%= f.label :gakunen_if,'現在の学年' %>
