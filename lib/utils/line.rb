@@ -11,7 +11,6 @@ module Utils::Line
         #アクセストークンを取得する
         def get_access_token(code)
             access_token_response = self.get_access_token_response(code)
-            logger.debug access_token_response
             if access_token_response.code != '200'
                 return false
             else
