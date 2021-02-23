@@ -12,7 +12,7 @@ module Utils::Line
         #ユーザー情報を取得する
         def get_user_info()
             if @access_token !=nil
-                user_info_response = this.get_line_user_info_response(@access_token)
+                user_info_response = self.get_line_user_info_response()
                 #レスポンスが失敗の場合
                 if user_info_response.code !='200'
                     return false
