@@ -53,7 +53,6 @@ module Utils::Line
             else
                 access_token_body = JSON.parse(access_token_response.body)
                 @access_token = access_token_body["access_token"]
-                session[:access_token] = @access_token
                 return true
             end
         end
