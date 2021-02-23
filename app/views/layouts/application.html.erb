@@ -24,7 +24,7 @@
     </svg>
     </div>
     <header>
-    <% flash.each do |val key| %>
+    <% flash.each do |val, key| %>
       <div class='flash flash_<%= key %>'><%= val %></div>
     <% end %>
     <%= link_to root_path do %> 
@@ -52,7 +52,11 @@
       </div>
     </footer>
     <script>
-
+      $(function(){
+        setTimeout(function(){
+          $('.flash').slideUp();
+        },3000);
+      })
     </script>
 
   </body>
