@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
     if @line.get_access_token(params[:code]) != false
       #ユーザー情報を取得する
       if @line.get_user_info() != false
+        #テーブルに値を入れて、セッションに必要事項を書く
         set_student_data(@line)
         flash.now[:success] = 'ログインしました'
       else

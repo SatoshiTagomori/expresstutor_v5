@@ -2,7 +2,12 @@ module StudentsHelper
 
     def current_user
         if @current_user.nil?
-            Student.find_by(:id=>session[:student_id])
+            if session[:user_type]
+                user_type = session[:user_type]
+                eval(user_type.capitalize).find_by(:id=>session[:user_id])
+            else
+                nil
+            end
         else
             @current_user
         end
@@ -20,6 +25,7 @@ module StudentsHelper
             student.update(:name=>line.user["displayName"])
         end
         #セッションに値を入れる
+        session[:access_token]=line.access_token
         session[:user_type] = 'student'
         session[:user_id] = student.id
     end

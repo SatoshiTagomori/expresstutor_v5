@@ -24,7 +24,7 @@
     </svg>
     </div>
     <header>
-    <% flash.each do |val, key| %>
+    <% flash.each do |key,val| %>
       <div class='flash flash_<%= key %>'><%= val %></div>
     <% end %>
     <%= link_to root_path do %> 
