@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
+  include Utils::Line
   def index
+    @l = Line.new
+    @sample =@l.get_access_token_response(params[:code])
+
     #ログイン状態でなければ
     if is_logined == false
       #アクセストークンを取得してセッションにいれる
