@@ -1,6 +1,6 @@
 module Utils::Line
-    attr_accessor :access_token
     class Line
+        attr_accessor :access_token
         def initialize
             @access_token=''
             @access_token_uri = "https://api.line.me/oauth2/v2.1/token"
