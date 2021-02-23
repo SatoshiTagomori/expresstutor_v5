@@ -2,7 +2,9 @@ class StudentsController < ApplicationController
   include Utils::Line
   def index
     @line = Line.new
-    @line.get_access_token(params[:code])
+    if @line.get_access_token(params[:code]) != false
+      @line.get_user_info()
+    end
 
     #ログイン状態でなければ
     if is_logined == false

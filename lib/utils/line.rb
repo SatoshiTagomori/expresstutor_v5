@@ -1,22 +1,59 @@
 module Utils::Line
     class Line
-        attr_accessor :access_token
+        attr_accessor :access_token,:user
         def initialize
-            @access_token=''
+            @access_token=nil
+            @user=nil
             @access_token_uri = "https://api.line.me/oauth2/v2.1/token"
+            @profile_uri = "https://api.line.me/v2/profile"
 
         end
 
+        #ユーザー情報を取得する
+        def get_user_info()
+            if @access_token !=nil
+                user_info_response = this.get_line_user_info_response(@access_token)
+                #レスポンスが失敗の場合
+                if user_info_response.code !='200'
+                    return false
+                else
+                    @user = JSON.parse(user_info_response.body)
+                    return true
+                end
+            else
+                return false
+            end
+        end
+
+        #ユーザー情報をリクエストする
+        def get_line_user_info_response()
+            if @access_token!=nil
+                uri = URI.parse(@profile_uri)
+                http = Net::HTTP.new(uri.host, uri.port)
+                http.use_ssl = true
+                http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+                headers={"Authorization" =>"Bearer "+＠access_token}
+                http.start do
+                    req = Net::HTTP::Get.new(uri.path)
+                    req.initialize_http_header(headers)
+                    return http.request(req)
+                end
+            else
+                return false
+            end
+        end
 
 
         #アクセストークンを取得する
         def get_access_token(code)
             access_token_response = self.get_access_token_response(code)
+            #レスポンスが失敗の場合
             if access_token_response.code != '200'
                 return false
             else
                 access_token_body = JSON.parse(access_token_response.body)
                 @access_token = access_token_body["access_token"]
+                session[:access_token] = @access_token
                 return true
             end
         end
