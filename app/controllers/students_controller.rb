@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
     #アクセストークンが存在する場合ならば
     if session[:access_token].present?
       @line.access_token = session[:access_token]
-      if @line.access_token_check
+      if @line.access_token_check()
         if @line.get_user_info() != false
           #テーブルに値を入れて、セッションに必要事項を書く
           set_student_data(@line)
