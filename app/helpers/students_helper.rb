@@ -8,6 +8,22 @@ module StudentsHelper
         end
     end
 
+
+    def set_student_data(line)
+        #lineidでテーブルを検索
+        student = Student.find_by(:lineid => line.user["userId"])
+        #存在しなければ生成
+        if student.blank?
+            student = Student.create(:name=>line.user["displayName"],:lineid=>line.user["userId"])
+        else
+            #存在すれば表示名をアップデート
+            student.update(:name=>line.user["displayName"])
+        end
+        #セッションに値を入れる
+        session[:user_type] = 'student'
+        session[:user_id] = student.id
+    end
+
     def is_logined
         #セッションにstudent_idがあるかどうかでログインしているかどうかを判断。
         #ただし、なんらかの事情でstudent_idが欠損していたとしてもアクセストークンが

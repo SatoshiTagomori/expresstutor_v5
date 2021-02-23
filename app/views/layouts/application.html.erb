@@ -24,8 +24,8 @@
     </svg>
     </div>
     <header>
-    <% flash.each do |key,val| %>
-      <div class='flash'><%= val + key %></div>
+    <% flash.each do |val key| %>
+      <div class='flash flash_<%= key %>'><%= val %></div>
     <% end %>
     <%= link_to root_path do %> 
       <h1 class='clearfix'><%= image_tag 'logo.png',alt: 'LINEで特急家庭教師' %></h1>
@@ -51,6 +51,13 @@
 
       </div>
     </footer>
+    <script>
+      $(function(){
+        setTimeout(function(){
+          $('.flash').slideUp();
+        },3000);
+      })
+    </script>
 
   </body>
 </html>
