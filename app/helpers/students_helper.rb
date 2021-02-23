@@ -43,7 +43,9 @@ module StudentsHelper
             return true
         end
 
-        if session[:student_id].nil?
+        if session[:user_id].blank?
+            return false
+=begin
             #アクセストークンのチェック
             if check_access_token
                 #トークンに問題がなければ
@@ -65,6 +67,7 @@ module StudentsHelper
                 #アクセストークンが無効であれば
                 return false
             end
+=end
         else
             return true
         end

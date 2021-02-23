@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
       flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください' 
     end
 
+=begin
     #ログイン状態でなければ
     if is_logined == false
       #アクセストークンを取得してセッションにいれる
@@ -31,6 +32,8 @@ class StudentsController < ApplicationController
         session[:lineid]=@student.lineid
       end
     end
+=end
+
   end
 
   def edit
@@ -47,9 +50,10 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    session[:error] = []
     session[:student_id]=nil
     session[:access_token]=nil
+    session[:user_id]=nil
+    session[:user_type]=nil
     current_user=nil
     redirect_to root_path
   end
