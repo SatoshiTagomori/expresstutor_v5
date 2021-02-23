@@ -8,7 +8,6 @@ class StudentsController < ApplicationController
       else
         flash.now[:danger] = 'ユーザー情報の取得に失敗しました'
       end
-
     else
       flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください' 
     end
