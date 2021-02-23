@@ -24,8 +24,8 @@
     </svg>
     </div>
     <header>
-    <% flush.each do |key,val| %>
-      <div class='flash'><%= val %></div>
+    <% flash.each do |key,val| %>
+      <div class='flash'><%= val + key %></div>
     <% end %>
     <%= link_to root_path do %> 
       <h1 class='clearfix'><%= image_tag 'logo.png',alt: 'LINEで特急家庭教師' %></h1>
