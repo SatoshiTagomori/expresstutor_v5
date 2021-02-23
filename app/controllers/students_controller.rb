@@ -1,8 +1,8 @@
 class StudentsController < ApplicationController
   include Utils::Line
   def index
-    line = Line.new
-    @sample = line.get_access_token(params[:code])
+    @line = Line.new
+    @line.get_access_token(params[:code])
 
     #ログイン状態でなければ
     if is_logined == false
