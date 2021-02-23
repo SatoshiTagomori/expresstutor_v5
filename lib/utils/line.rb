@@ -1,4 +1,5 @@
 module Utils::Line
+    attr_accessor :access_token
     class Line
         def initialize
             @access_token=''
