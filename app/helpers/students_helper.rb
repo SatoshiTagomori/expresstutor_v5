@@ -1,7 +1,7 @@
 module StudentsHelper
 
     def current_user
-        if @current_user.nil?
+        if @current_user.blank?
             if session[:user_type]
                 user_type = session[:user_type]
                 eval(user_type.capitalize+'.find_by(:id=>session[:user_id])')
