@@ -6,7 +6,8 @@
     <dt>LINEID</dt>
     <dd><%= current_user.lineid %></dd>
     <dt>お名前</dt>
-    <dd><%#= current_user.personal.name %></dd>
+    <% if current_user.personal.present? %>
+    <dd><%= current_user.personal.name %></dd>
     <dt>お子様のお名前</dt>
     <dd><%#= current_user.personal.cname %></dd>
     <dt>お住まいの都道府県</dt>
@@ -15,4 +16,5 @@
     <dd><%#= current_user.personal.gakunen.name %></dd>
     <dt>電話番号</dt>
     <dd><%#= current_user.personal.tel %></dd>
+    <% end %>
 </dl>
