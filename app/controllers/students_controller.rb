@@ -5,11 +5,15 @@ class StudentsController < ApplicationController
     #アクセストークンが存在する場合ならば
     if session[:access_token].present?
       @line.access_token = session[:access_token]
-      if @line.get_user_info() != false
-        #テーブルに値を入れて、セッションに必要事項を書く
-        set_student_data(@line)
+      if @line.access_token_check
+        if @line.get_user_info() != false
+          #テーブルに値を入れて、セッションに必要事項を書く
+          set_student_data(@line)
+        else
+          flash.now[:danger] = 'ユーザー情報の取得に失敗しました。再度ログインしてください。'
+        end
       else
-        flash.now[:danger] = 'ユーザー情報の取得に失敗しました。再度ログインしてください。'
+        flash.now[:danger] = 'アクセストークンが有効期限切れです。再度ログインしてください。'
       end
     else
       #アクセストークンを取得する
@@ -27,22 +31,6 @@ class StudentsController < ApplicationController
       end
     end
 
-=begin
-    #ログイン状態でなければ
-    if is_logined == false
-      #アクセストークンを取得してセッションにいれる
-      access_token = get_access_token(params[:code])
-      #エラーがなければ
-      if is_no_error()
-        #ユーザー情報を取得する
-        @user_info = get_user_info(access_token)
-        @student = Student.find_by(:lineid => @user_info["userId"])
-        @student = student_insert(@student,@user_info)
-        session[:student_id]=@student.id
-        session[:lineid]=@student.lineid
-      end
-    end
-=end
 
   end
 

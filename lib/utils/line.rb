@@ -6,8 +6,27 @@ module Utils::Line
             @user=nil
             @access_token_uri = "https://api.line.me/oauth2/v2.1/token"
             @profile_uri = "https://api.line.me/v2/profile"
+            @access_token_check_uri="https://api.line.me/oauth2/v2.1/verify"
 
         end
+
+        #アクセストークンの有効性チェック
+        def check_access_token()
+            if @access_token.present?
+                uri = URI.parse(@access_token_check_uri)
+                para = {:access_token => @access_token}
+                uri.query = URI.encode_www_form(para)
+                res = Net::HTTP.get_response(uri)
+                if res.code =="200"
+                    return true
+                else
+                    return false
+                end
+            else
+                return false
+            end
+        end
+
 
         #ユーザー情報を取得する
         def get_user_info()

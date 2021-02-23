@@ -49,15 +49,8 @@ module StudentsHelper
             return true
         end
     end
-=begin
-    def student_insert(student,user_info)
-        if student.blank?
-            student = Student.create(:name=>user_info["displayName"],:lineid=>user_info["userId"])
-        end
-        student
-    end
-=end
 
+=begin
     #アクセストークンの有効性チェック
     def check_access_token()
         if session[:access_token].present?
@@ -135,6 +128,6 @@ module StudentsHelper
         end
     end
 
-    
+=end    
 
 end
