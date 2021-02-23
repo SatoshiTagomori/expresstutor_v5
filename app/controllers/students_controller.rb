@@ -3,7 +3,14 @@ class StudentsController < ApplicationController
   def index
     @line = Line.new
     if @line.get_access_token(params[:code]) != false
-      @line.get_user_info()
+      if @line.get_user_info() != false
+        flash.now[:success] = 'ログインしました'
+      else
+        flash.now[:danger] = 'ユーザー情報の取得に失敗しました'
+      end
+
+    else
+      flash.now[:danger] = 'アクセストークンの取得に失敗しました。管理者にお問い合わせください' 
     end
 
     #ログイン状態でなければ
