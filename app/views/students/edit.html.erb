@@ -11,6 +11,10 @@
         <%= f.text_field :cname ,placeholder: '例）特急　太郎'%>
         <%= f.label :tel, '電話番号' %>
         <%= f.text_field :tel ,placeholder: 'xxx-xxxx-xxxx' %>
+        <%= f.label :email, 'EMAIL' %>
+        <%= f.email_field :email,placeholder: 'abc@def.com' %>
+        <%= f.label :email, 'EMAIL(確認）' %>
+        <%= f.email_field :email_confirmation,placeholder: 'abc@def.com' %>
         <%= f.submit '登録' %>
     <% end %>
 <% else %>
@@ -25,6 +29,10 @@
         <%= f.text_field :cname ,placeholder: '例）特急　太郎'%>
         <%= f.label :tel, '電話番号' %>
         <%= f.text_field :tel ,placeholder: 'xxx-xxxx-xxxx' %>
+        <%= f.label :email, 'EMAIL' %>
+        <%= f.email_field :email,placeholder: 'abc@def.com' %>
+        <%= f.label :email, 'EMAIL(確認）' %>
+        <%= f.email_field :email_confirmation,placeholder: 'abc@def.com' %>
         <%= f.submit '登録' %>
     <% end %>
 <% end %>

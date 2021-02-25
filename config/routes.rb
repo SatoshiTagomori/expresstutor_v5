@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'students/edit' => 'students#edit',as: :student_edit
   post 'students/edit' =>'students#create'
   patch 'students/edit' => 'students#update_personal'
+  get 'students/payment' => 'students#payment',as: :payment
 
   get 'logout' => 'students#logout'
 

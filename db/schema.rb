@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_122700) do
+ActiveRecord::Schema.define(version: 2021_02_24_084029) do
 
   create_table "gakunens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_122700) do
     t.string "name"
     t.string "cname"
     t.string "tel"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["gakunen_id"], name: "index_personals_on_gakunen_id"
@@ -34,6 +35,17 @@ ActiveRecord::Schema.define(version: 2021_02_21_122700) do
 
   create_table "prefs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "prod_id"
+    t.string "price_id"
+    t.boolean "mode"
+    t.integer "ticket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

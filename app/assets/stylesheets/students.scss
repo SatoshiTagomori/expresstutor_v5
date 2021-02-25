@@ -35,10 +35,76 @@
     }
 }
 
+.student_base{
+    width: 756px;
+    margin: 0 auto;
+    background-color:lavender;
+    padding:10px;
+    border-radius:10px;
+    dt{
+        font-size: 20px;
+        clear:both;
+        float:left;
+        width:200px;
+        border-right: solid 2px gray;
+        box-sizing:border-box;
+        margin-bottom:20px;
+    }
+    dd{
+        margin-left:0;
+        float:left;
+        font-size:20px;
+        margin-bottom:10px;
+        padding-left:20px;
+    }
+}
+
+.subsc{
+    width:756px;
+    margin:0 auto;
+    .subscriptions{
+        box-sizing:border-box;
+        padding:5px;
+        text-align:center;
+        width: 33.3%;
+        float:left;
+        border-right:solid 3px gray;
+        &:last-child{
+            border-right:none;
+        }
+        form{
+            display:block;
+            margin:0 auto;
+        }
+    }
+}
+
 
 @media screen and (max-width:756px){
     .new_personal,.edit_personal{
         width:90%;
+    }
+    .student_base{
+        width:90%;
+        dt{
+            float:none;
+            border-right:none;
+            border-bottom:solid 3px green;
+        }
+        dd{
+            float:none;
+            border-bottom: dashed 2px gray;
+        }
+    }
+    .subsc{
+        width:90%;
+        margin:0 auto;
+        .subscriptions{
+            width: 100%;
+            float:none;
+            border-right:none;
+            border-bottom:dashed 3px gray;
+        }
     }
 
 }

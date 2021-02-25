@@ -1,5 +1,7 @@
 {
   "name": "expresstutor_v5",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "stripe": "^8.137.0"
+  }
 }

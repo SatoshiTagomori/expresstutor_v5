@@ -17,3 +17,7 @@ gkn =["小一","小二","小三","小四","小五","小六","中一","中二","�
 gkn.each do |g|
     Gakunen.create(:name=>g)
 end
+
+Product.create(:name=>'ライトコース',:price=>3850,:prod_id=>'prod_J0387oBCjMnbOk',:price_id=>'price_1IONHEHz8Iexb7Ql83LUOz18',:ticket=>5)
+Product.create(:name=>'ベーシックコース',:price=>7700,:prod_id=>'prod_J0O6ZYlTrZyG36',:price_id=>'price_1IONKVHz8Iexb7QllGzepVLP',:ticket=>12)
+Product.create(:name=>'マスターコース',:price=>10780,:prod_id=>'prod_J0O94lfjzpE3k7',:price_id=>'price_1IONMlHz8Iexb7Ql7ail0rz4',:ticket=>20)

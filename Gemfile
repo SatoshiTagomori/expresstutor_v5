@@ -6,6 +6,7 @@ ruby '2.7.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'unicorn'
+gem 'stripe'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use mysql as the database for Active Record

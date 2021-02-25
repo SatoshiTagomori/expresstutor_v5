@@ -27,11 +27,11 @@
     <% flash.each do |key,val| %>
       <div class='flash flash_<%= key %>'><%= val %></div>
     <% end %>
-    <%= link_to root_path do %> 
+    <%= link_to root_path, data: {"turbolinks" => false} do %> 
       <h1 class='clearfix'><%= image_tag 'logo.png',alt: 'LINEで特急家庭教師' %></h1>
     <% end %>
     <% if is_logined %>
-      <%= link_to 'マイページ', students_path,id: 'my_page_link' %>
+      <%= link_to 'マイページ', students_path,id: 'my_page_link', data: {"turbolinks" => false} %>
     <% else %>
       <%= render partial: 'home/line_sign_in_form' %>
     <% end %>
