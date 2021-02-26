@@ -1,0 +1,26 @@
+<h2>お支払い</h2>
+
+<div class='subsc clearfix'>
+<% @products.each do |product| %>
+  <div class='subscriptions'>
+  <h4><%= product.name %></h4>
+  <p>月<%= product.price.to_s(:delimited) %>円/（内税）</p>
+  <p>毎月<%= product.ticket %>チケット</p>
+  <%#= form_tag payment_path,method: 'GET' do %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= STRIPE_PUB_KEY %>"
+      data-amount="<%= product.price %>"
+      data-currency="jpy"
+      data-description="クレジット決済"
+      data-name=<%= "#{product.name}" %>
+      data-email=<%= current_user.personal.email %>
+      data-label="<%= product.name %>でご契約"
+      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+      data-locale="auto"
+      data-allow-remember-me="true">
+    </script>
+  <%# end %>
+  </div>
+
+  <% end %>
+  </div>

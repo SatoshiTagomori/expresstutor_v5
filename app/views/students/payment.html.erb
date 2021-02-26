@@ -1,26 +1,77 @@
-<h2>お支払い</h2>
+<% Product.all.each do |p| %>
+  <button id='<%= p.name %>'><%= p.name %></button>
+<% end %>
 
-<div class='subsc clearfix'>
-<% @products.each do |product| %>
-  <div class='subscriptions'>
-  <h4><%= product.name %></h4>
-  <p>月<%= product.price.to_s(:delimited) %>円/（内税）</p>
-  <p>毎月<%= product.ticket %>チケット</p>
-  <%#= form_tag payment_path,method: 'GET' do %>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= STRIPE_PUB_KEY %>"
-      data-amount="<%= product.price %>"
-      data-currency="jpy"
-      data-description="クレジット決済"
-      data-name=<%= "#{product.name}" %>
-      data-email=<%= current_user.personal.email %>
-      data-label="<%= product.name %>でご契約"
-      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-      data-locale="auto"
-      data-allow-remember-me="true">
-    </script>
-  <%# end %>
-  </div>
 
-  <% end %>
-  </div>
+<button id="checkout">Subscribe</button>
+
+<script>
+
+// If a fetch error occurs, log it to the console and show it in the UI.
+var handleFetchResult = function(result) {
+  if (!result.ok) {
+    return result.json().then(function(json) {
+      if (json.error && json.error.message) {
+        throw new Error(result.url + ' ' + result.status + ' ' + json.error.message);
+      }
+    }).catch(function(err) {
+      showErrorMessage(err);
+      throw err;
+    });
+  }
+  return result.json();
+};
+
+// Create a Checkout Session with the selected plan ID
+var createCheckoutSession = function(priceId) {
+  return fetch("/create-checkout-session", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      priceId: priceId
+    })
+  }).then(handleFetchResult);
+};
+
+// Handle any errors returned from Checkout
+var handleResult = function(result) {
+  if (result.error) {
+    showErrorMessage(result.error.message);
+  }
+};
+
+var showErrorMessage = function(message) {
+  var errorEl = document.getElementById("error-message")
+  errorEl.textContent = message;
+  errorEl.style.display = "block";
+};
+
+/* Get your Stripe publishable key to initialize Stripe.js */
+fetch("/setup")
+  .then(handleFetchResult)
+  .then(function(json) {
+    var publishableKey = json.publishableKey;
+    var stripe = Stripe(publishableKey);
+    var priceIds = json.sucscriptions;
+    Object.keys(priceIds).forEach(function(key){
+      var key_name = Object.keys(priceIds[key])[0];
+      var price_id = priceIds[key][key_name];
+      document
+      .getElementById(key_name)
+      .addEventListener("click", function(evt) {
+        createCheckoutSession(price_id).then(function(data) {
+          // Call Stripe.js method to redirect to the new Checkout page
+          stripe
+            .redirectToCheckout({
+              sessionId: data.sessionId
+            })
+            .then(handleResult);
+        });
+      });
+    })
+
+  });
+
+</script>

@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  protect_from_forgery except: :create_checkout_session
   include Utils::Line
   def index
     if is_logined
@@ -69,9 +70,51 @@ class StudentsController < ApplicationController
   end
 
   def payment
-    @products = Product.all
+    @product = Product.find(1)
   end
 
+
+  def create_checkout_session
+    Stripe.api_key = STRIPE_SECRET_KEY
+    begin
+      session = Stripe::Checkout::Session.create(
+        success_url: 'https://expresstutor.tokyo/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://expresstutor.tokyo/cancel',
+        payment_method_types: ['card'],
+        mode: 'subscription',
+        line_items: [{
+          # For metered billing, do not pass quantity
+          quantity: 1,
+          price: params[:priceId],
+        }],
+      )
+    rescue => e
+      #halt 400,
+       #   { 'Content-Type' => 'application/json' },
+       #render :json =>{ 'error': { message: e.error.message } }
+    end
+  
+    render :json =>{sessionId: session.id}
+  end
+
+  def success
+  end
+
+  def cancel
+  end
+
+  #stripeをセットアップする
+  def setup
+    result = Hash.new
+    result["publishableKey"]=STRIPE_PUB_KEY
+    result["sucscriptions"]= Array.new
+    Product.all.each do |p|
+      tmp = Hash.new
+      tmp[p.name]=p.price_id
+      result["sucscriptions"].push(tmp)
+    end
+    render :json =>result
+  end
 
 
   private

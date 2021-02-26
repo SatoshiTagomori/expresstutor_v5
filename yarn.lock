@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@stripe/stripe-js@^1.13.0":
+  "integrity" "sha512-8H3yH+jqZ7pWe34WvOo0L0pYsjaveb3Kw9dfoHUMnUwHWZ7ku4SwWZD1D8wQSnTx5se4iVUuKRsLvEwkUaUjSw=="
+  "resolved" "https://registry.npmjs.org/@stripe/stripe-js/-/stripe-js-1.13.0.tgz"
+  "version" "1.13.0"
+
 "@types/node@>=8.1.0":
   "integrity" "sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-14.14.31.tgz"

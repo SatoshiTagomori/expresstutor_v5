@@ -2,6 +2,7 @@
   "name": "expresstutor_v5",
   "private": true,
   "dependencies": {
+    "@stripe/stripe-js": "^1.13.0",
     "stripe": "^8.137.0"
   }
 }
